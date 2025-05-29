@@ -1,6 +1,7 @@
+
 import React, { useEffect, useState } from 'react';
 import { Button } from '@/components/ui/button';
-import { ArrowRight, Play, Shield, Wrench, Droplets, Zap, Factory } from 'lucide-react';
+import { ArrowRight, Play, Shield, Wrench, Droplets, Zap } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { ScrollProgress } from '@/components/ui/scroll-progress';
 import { FloatingElements } from '@/components/ui/floating-elements';
@@ -64,132 +65,93 @@ export const HeroSection = () => {
           <div className="max-w-7xl mx-auto space-y-12">
             {/* Enhanced REFSOL1 Logo and Branding */}
             <div className="space-y-8">
-              {/* Large Logo Display */}
+              {/* Large Logo Display - Fixed sizing and positioning */}
               <div className="flex justify-center mb-8">
-                <div 
-                  className="relative"
-                  style={{
-                    transform: `perspective(1000px) rotateX(${mousePosition.y * 0.02}deg) rotateY(${mousePosition.x * 0.02}deg)`,
-                    animation: 'bounce-in 1s ease-out'
-                  }}
-                >
+                <div className="relative bg-black/20 backdrop-blur-sm p-8 rounded-3xl border border-cyan-400/30">
                   <Logo 
                     size="xl" 
-                    className="scale-[2] md:scale-[3] lg:scale-[4]"
+                    className="scale-150 md:scale-200 lg:scale-300"
+                    showText={false}
                   />
-                  <div className="absolute inset-0 animate-spin-slow opacity-20">
-                    <div className="w-24 h-24 md:w-32 md:h-32 lg:w-48 lg:h-48 border-2 border-cyan-400/30 rounded-full border-t-cyan-400" />
-                  </div>
                 </div>
               </div>
               
-              <h1 className="text-5xl md:text-7xl lg:text-9xl font-bold leading-tight transform perspective-1000">
-                <span 
-                  className="block bg-gradient-to-r from-cyan-400 via-blue-500 to-cyan-300 bg-clip-text text-transparent animate-glow"
-                  style={{ 
-                    textShadow: '0 0 60px rgba(6, 182, 212, 0.6)',
-                    transform: `rotateX(${mousePosition.y * 0.01}deg) rotateY(${mousePosition.x * 0.01}deg)`,
-                    animation: 'typewriter 3s steps(12) 1s both, glow 2s ease-in-out infinite alternate'
-                  }}
-                >
-                  Revolutionary
+              <h1 className="text-5xl md:text-7xl lg:text-9xl font-bold leading-tight">
+                <span className="block bg-gradient-to-r from-cyan-400 via-blue-500 to-cyan-300 bg-clip-text text-transparent">
+                  REFSOL1
                 </span>
-                <span 
-                  className="block text-white mt-4 transform"
-                  style={{ 
-                    textShadow: '0 0 40px rgba(255, 255, 255, 0.4)',
-                    transform: `translateZ(50px) rotateX(${-mousePosition.y * 0.005}deg)`,
-                    animation: 'slide-up 1s ease-out 1.5s both'
-                  }}
-                >
+                <span className="block text-white mt-4">
                   Smart Maintenance
                 </span>
-                <span 
-                  className="block bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent mt-4"
-                  style={{ animation: 'bounce-in 1s ease-out 2s both' }}
-                >
+                <span className="block bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent mt-4">
                   Solutions
                 </span>
               </h1>
               
-              <p 
-                className="text-xl md:text-3xl text-gray-200 max-w-5xl mx-auto leading-relaxed glass p-8 rounded-3xl backdrop-blur-xl border border-cyan-400/20"
-                style={{ animation: 'fade-up 1s ease-out 2.5s both' }}
-              >
-                Advanced <span className="text-cyan-400 font-bold animate-pulse">AI-Powered</span> maintenance solutions, revolutionary <span className="text-blue-400 font-bold animate-pulse">Predictive Analytics</span>, and next-generation industrial repair technologies for the world's most challenging environments.
+              <p className="text-xl md:text-3xl text-gray-200 max-w-5xl mx-auto leading-relaxed glass p-8 rounded-3xl backdrop-blur-xl border border-cyan-400/20">
+                Advanced <span className="text-cyan-400 font-bold">AI-Powered</span> maintenance solutions, revolutionary <span className="text-blue-400 font-bold">Predictive Analytics</span>, and next-generation industrial repair technologies for the world's most challenging environments.
               </p>
             </div>
 
-            {/* Enhanced CTA Buttons with 3D Effects */}
-            <div 
-              className="flex flex-col sm:flex-row gap-8 justify-center items-center"
-              style={{ animation: 'slide-up 1s ease-out 3s both' }}
-            >
+            {/* Enhanced CTA Buttons */}
+            <div className="flex flex-col sm:flex-row gap-8 justify-center items-center">
               <Link to="/products">
                 <Button 
                   size="lg" 
-                  className="group bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-white px-12 py-8 text-2xl font-bold transform hover:scale-110 hover:-translate-y-4 hover:rotate-1 transition-all duration-700 shadow-2xl hover:shadow-cyan-500/60 rounded-3xl border-2 border-cyan-400/40 animate-float"
-                  style={{ 
-                    boxShadow: '0 20px 60px rgba(6, 182, 212, 0.4), 0 0 40px rgba(6, 182, 212, 0.2)',
-                    transform: `perspective(1000px) rotateX(5deg)`
-                  }}
+                  className="group bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-white px-12 py-8 text-2xl font-bold transform hover:scale-110 transition-all duration-500 shadow-2xl hover:shadow-cyan-500/60 rounded-3xl border-2 border-cyan-400/40"
                 >
-                  Explore REFSOL1 Products
-                  <ArrowRight className="ml-4 w-8 h-8 group-hover:translate-x-3 group-hover:scale-125 transition-transform duration-500" />
+                  Explore Products
+                  <ArrowRight className="ml-4 w-8 h-8 group-hover:translate-x-3 transition-transform duration-500" />
                 </Button>
               </Link>
-              <Link to="/contact">
+              <Link to="/catalog">
                 <Button 
                   variant="outline" 
                   size="lg"
-                  className="group border-3 border-cyan-400 text-cyan-400 hover:bg-cyan-400 hover:text-black px-12 py-8 text-2xl font-bold transform hover:scale-110 hover:-translate-y-4 hover:-rotate-1 transition-all duration-700 rounded-3xl glass backdrop-blur-xl animate-pulse"
-                  style={{ transform: `perspective(1000px) rotateX(-5deg)` }}
+                  className="group border-3 border-cyan-400 text-cyan-400 hover:bg-cyan-400 hover:text-black px-12 py-8 text-2xl font-bold transform hover:scale-110 transition-all duration-500 rounded-3xl glass backdrop-blur-xl"
                 >
-                  <Play className="mr-4 w-8 h-8 group-hover:scale-125 group-hover:rotate-180 transition-transform duration-700" />
-                  Watch Technology Demo
+                  <Play className="mr-4 w-8 h-8 group-hover:scale-125 transition-transform duration-500" />
+                  View Catalogs
                 </Button>
               </Link>
             </div>
 
-            {/* Enhanced Stats with Advanced Animations */}
-            <div 
-              className="grid grid-cols-1 md:grid-cols-4 gap-8 mt-24"
-              style={{ animation: 'stagger-fade-up 1s ease-out 3.5s both' }}
-            >
-              <div className="group text-center space-y-6 p-10 rounded-3xl glass border-2 border-cyan-500/40 hover:border-cyan-400/80 transform hover:scale-110 hover:-translate-y-6 hover:rotate-2 transition-all duration-700 hover:shadow-2xl hover:shadow-cyan-500/30 backdrop-blur-xl animate-bounce-in">
-                <div className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent animate-glow">
+            {/* Enhanced Stats */}
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mt-24">
+              <div className="group text-center space-y-6 p-10 rounded-3xl glass border-2 border-cyan-500/40 hover:border-cyan-400/80 transform hover:scale-105 transition-all duration-500 hover:shadow-2xl hover:shadow-cyan-500/30 backdrop-blur-xl">
+                <div className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
                   1000+
                 </div>
                 <div className="text-gray-200 font-semibold text-lg">Smart Installations</div>
                 <div className="text-cyan-400 font-medium">Across 50+ Countries</div>
-                <Wrench className="w-8 h-8 text-cyan-400/60 mx-auto group-hover:rotate-180 transition-transform duration-700 animate-float" />
+                <Wrench className="w-8 h-8 text-cyan-400/60 mx-auto" />
               </div>
               
-              <div className="group text-center space-y-6 p-10 rounded-3xl glass border-2 border-blue-500/40 hover:border-blue-400/80 transform hover:scale-110 hover:-translate-y-6 hover:-rotate-2 transition-all duration-700 hover:shadow-2xl hover:shadow-blue-500/30 backdrop-blur-xl animate-zoom-in" style={{ animationDelay: '0.2s' }}>
-                <div className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent animate-glow">
+              <div className="group text-center space-y-6 p-10 rounded-3xl glass border-2 border-blue-500/40 hover:border-blue-400/80 transform hover:scale-105 transition-all duration-500 hover:shadow-2xl hover:shadow-blue-500/30 backdrop-blur-xl">
+                <div className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
                   30+
                 </div>
                 <div className="text-gray-200 font-semibold text-lg">Years Innovation</div>
                 <div className="text-blue-400 font-medium">Industry Leadership</div>
-                <Shield className="w-8 h-8 text-blue-400/60 mx-auto group-hover:scale-125 transition-transform duration-700 animate-pulse" />
+                <Shield className="w-8 h-8 text-blue-400/60 mx-auto" />
               </div>
               
-              <div className="group text-center space-y-6 p-10 rounded-3xl glass border-2 border-green-500/40 hover:border-green-400/80 transform hover:scale-110 hover:-translate-y-6 hover:rotate-2 transition-all duration-700 hover:shadow-2xl hover:shadow-green-500/30 backdrop-blur-xl animate-slide-left" style={{ animationDelay: '0.4s' }}>
-                <div className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-green-400 to-cyan-500 bg-clip-text text-transparent animate-glow">
+              <div className="group text-center space-y-6 p-10 rounded-3xl glass border-2 border-green-500/40 hover:border-green-400/80 transform hover:scale-105 transition-all duration-500 hover:shadow-2xl hover:shadow-green-500/30 backdrop-blur-xl">
+                <div className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-green-400 to-cyan-500 bg-clip-text text-transparent">
                   99.9%
                 </div>
                 <div className="text-gray-200 font-semibold text-lg">Uptime Rate</div>
                 <div className="text-green-400 font-medium">AI Monitoring</div>
-                <Droplets className="w-8 h-8 text-green-400/60 mx-auto group-hover:bounce transition-transform duration-700 animate-shake" />
+                <Droplets className="w-8 h-8 text-green-400/60 mx-auto" />
               </div>
               
-              <div className="group text-center space-y-6 p-10 rounded-3xl glass border-2 border-orange-500/40 hover:border-orange-400/80 transform hover:scale-110 hover:-translate-y-6 hover:-rotate-2 transition-all duration-700 hover:shadow-2xl hover:shadow-orange-500/30 backdrop-blur-xl animate-flip-x" style={{ animationDelay: '0.6s' }}>
-                <div className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-orange-400 to-red-500 bg-clip-text text-transparent animate-glow">
+              <div className="group text-center space-y-6 p-10 rounded-3xl glass border-2 border-orange-500/40 hover:border-orange-400/80 transform hover:scale-105 transition-all duration-500 hover:shadow-2xl hover:shadow-orange-500/30 backdrop-blur-xl">
+                <div className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-orange-400 to-red-500 bg-clip-text text-transparent">
                   24/7
                 </div>
                 <div className="text-gray-200 font-semibold text-lg">Smart Response</div>
                 <div className="text-orange-400 font-medium">Global Coverage</div>
-                <Zap className="w-8 h-8 text-orange-400/60 mx-auto group-hover:animate-pulse transition-transform duration-700 animate-swing" />
+                <Zap className="w-8 h-8 text-orange-400/60 mx-auto" />
               </div>
             </div>
           </div>

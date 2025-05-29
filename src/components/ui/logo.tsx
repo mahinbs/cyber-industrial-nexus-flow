@@ -14,10 +14,10 @@ export const Logo: React.FC<LogoProps> = ({
   showText = true
 }) => {
   const sizes = {
-    sm: 'w-8 h-8',
-    md: 'w-12 h-12',
-    lg: 'w-16 h-16',
-    xl: 'w-24 h-24'
+    sm: 'w-10 h-8',
+    md: 'w-16 h-12',
+    lg: 'w-20 h-16',
+    xl: 'w-32 h-24'
   };
 
   const textSizes = {
@@ -29,7 +29,7 @@ export const Logo: React.FC<LogoProps> = ({
 
   return (
     <div className={cn('flex items-center space-x-3', className)}>
-      <div className={cn(sizes[size], 'relative overflow-hidden rounded-full')}>
+      <div className={cn(sizes[size], 'relative overflow-hidden')}>
         <img
           src="/lovable-uploads/9eff5b8b-16e4-48bb-b29f-73b70e6b5b69.png"
           alt="REFSOL1 Logo"
