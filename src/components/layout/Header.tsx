@@ -41,11 +41,9 @@ export const Header = () => {
     >
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-20">
-          {/* REFSOL1 Logo */}
           <Link to="/" className="group">
             <Logo 
               size={scrolled ? 'sm' : 'md'} 
-              variant="glow"
               className="transition-all duration-500"
             />
           </Link>

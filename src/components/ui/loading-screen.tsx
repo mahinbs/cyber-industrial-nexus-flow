@@ -38,14 +38,7 @@ export const LoadingScreen: React.FC<LoadingScreenProps> = ({
     <div className="fixed inset-0 bg-black z-[100] flex items-center justify-center">
       <div className="text-center space-y-8">
         <div className="relative">
-          <Logo 
-            size="xl" 
-            variant="glow" 
-            className="scale-150 animate-bounce-in"
-          />
-          <div className="absolute inset-0 animate-spin-slow opacity-30">
-            <div className="w-32 h-32 border-2 border-cyan-400/30 rounded-full border-t-cyan-400" />
-          </div>
+          <Logo size="xl" className="scale-150" />
         </div>
         
         <div className="w-64 h-2 bg-gray-800 rounded-full overflow-hidden">
@@ -55,7 +48,7 @@ export const LoadingScreen: React.FC<LoadingScreenProps> = ({
           />
         </div>
         
-        <p className="text-cyan-400 text-lg font-medium animate-pulse">
+        <p className="text-cyan-400 text-lg font-medium">
           Initializing Smart Maintenance Systems...
         </p>
       </div>

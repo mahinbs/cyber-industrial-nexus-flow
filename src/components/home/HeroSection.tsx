@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, Play, Shield, Wrench, Droplets, Zap, Factory } from 'lucide-react';
@@ -76,7 +75,6 @@ export const HeroSection = () => {
                 >
                   <Logo 
                     size="xl" 
-                    variant="glow" 
                     className="scale-[2] md:scale-[3] lg:scale-[4]"
                   />
                   <div className="absolute inset-0 animate-spin-slow opacity-20">
