@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, Globe } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { Logo } from '@/components/ui/logo';
 import { cn } from '@/lib/utils';
 
 export const Header = () => {
@@ -40,14 +41,13 @@ export const Header = () => {
     >
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-20">
-          {/* Logo */}
-          <Link to="/" className="flex items-center space-x-2 group">
-            <div className="w-10 h-10 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-lg flex items-center justify-center transform group-hover:rotate-180 transition-transform duration-500">
-              <span className="text-black font-bold text-xl">IS</span>
-            </div>
-            <span className="text-2xl font-bold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
-              Industrial Solutions
-            </span>
+          {/* REFSOL1 Logo */}
+          <Link to="/" className="group">
+            <Logo 
+              size={scrolled ? 'sm' : 'md'} 
+              variant="glow"
+              className="transition-all duration-500"
+            />
           </Link>
 
           {/* Desktop Navigation */}

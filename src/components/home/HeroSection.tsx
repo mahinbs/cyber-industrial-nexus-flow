@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 import { ScrollProgress } from '@/components/ui/scroll-progress';
 import { FloatingElements } from '@/components/ui/floating-elements';
 import { ParticleSystem } from '@/components/ui/particle-system';
+import { Logo } from '@/components/ui/logo';
 
 export const HeroSection = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -60,18 +61,28 @@ export const HeroSection = () => {
         {/* Floating Industrial Elements */}
         <FloatingElements count={25} />
 
-        {/* Advanced Grid Pattern with Animation */}
-        <div className="absolute inset-0 opacity-20" style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%2306b6d4' stroke-width='1'%3E%3Cpath d='M0 40h80M40 0v80M20 0v80M60 0v80M0 20h80M0 60h80'/%3E%3C/g%3E%3C/svg%3E")`,
-          animation: 'pulse 6s ease-in-out infinite, float 4s ease-in-out infinite'
-        }} />
-
         <div className="relative z-10 container mx-auto px-4 text-center">
           <div className="max-w-7xl mx-auto space-y-12">
-            {/* Enhanced REFSOL1 Branding with Typewriter Effect */}
+            {/* Enhanced REFSOL1 Logo and Branding */}
             <div className="space-y-8">
-              <div className="inline-block px-8 py-3 bg-gradient-to-r from-cyan-500/20 to-blue-500/20 rounded-full border border-cyan-400/30 backdrop-blur-lg mb-6 animate-glow">
-                <span className="text-cyan-300 font-bold text-lg tracking-wider">REFSOL1 INNOVATIONS</span>
+              {/* Large Logo Display */}
+              <div className="flex justify-center mb-8">
+                <div 
+                  className="relative"
+                  style={{
+                    transform: `perspective(1000px) rotateX(${mousePosition.y * 0.02}deg) rotateY(${mousePosition.x * 0.02}deg)`,
+                    animation: 'bounce-in 1s ease-out'
+                  }}
+                >
+                  <Logo 
+                    size="xl" 
+                    variant="glow" 
+                    className="scale-[2] md:scale-[3] lg:scale-[4]"
+                  />
+                  <div className="absolute inset-0 animate-spin-slow opacity-20">
+                    <div className="w-24 h-24 md:w-32 md:h-32 lg:w-48 lg:h-48 border-2 border-cyan-400/30 rounded-full border-t-cyan-400" />
+                  </div>
+                </div>
               </div>
               
               <h1 className="text-5xl md:text-7xl lg:text-9xl font-bold leading-tight transform perspective-1000">
@@ -93,13 +104,13 @@ export const HeroSection = () => {
                     animation: 'slide-up 1s ease-out 1.5s both'
                   }}
                 >
-                  Industrial Solutions
+                  Smart Maintenance
                 </span>
                 <span 
                   className="block bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent mt-4"
                   style={{ animation: 'bounce-in 1s ease-out 2s both' }}
                 >
-                  for Tomorrow
+                  Solutions
                 </span>
               </h1>
               
@@ -107,7 +118,7 @@ export const HeroSection = () => {
                 className="text-xl md:text-3xl text-gray-200 max-w-5xl mx-auto leading-relaxed glass p-8 rounded-3xl backdrop-blur-xl border border-cyan-400/20"
                 style={{ animation: 'fade-up 1s ease-out 2.5s both' }}
               >
-                Advanced <span className="text-cyan-400 font-bold animate-pulse">Hydrokinetics</span>, revolutionary <span className="text-blue-400 font-bold animate-pulse">Fin Foam™</span> technology, and next-generation composite repair solutions for the world's most challenging industrial environments.
+                Advanced <span className="text-cyan-400 font-bold animate-pulse">AI-Powered</span> maintenance solutions, revolutionary <span className="text-blue-400 font-bold animate-pulse">Predictive Analytics</span>, and next-generation industrial repair technologies for the world's most challenging environments.
               </p>
             </div>
 
@@ -151,7 +162,7 @@ export const HeroSection = () => {
                 <div className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent animate-glow">
                   1000+
                 </div>
-                <div className="text-gray-200 font-semibold text-lg">Industrial Projects</div>
+                <div className="text-gray-200 font-semibold text-lg">Smart Installations</div>
                 <div className="text-cyan-400 font-medium">Across 50+ Countries</div>
                 <Wrench className="w-8 h-8 text-cyan-400/60 mx-auto group-hover:rotate-180 transition-transform duration-700 animate-float" />
               </div>
@@ -169,8 +180,8 @@ export const HeroSection = () => {
                 <div className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-green-400 to-cyan-500 bg-clip-text text-transparent animate-glow">
                   99.9%
                 </div>
-                <div className="text-gray-200 font-semibold text-lg">Safety Record</div>
-                <div className="text-green-400 font-medium">Zero Lost Time</div>
+                <div className="text-gray-200 font-semibold text-lg">Uptime Rate</div>
+                <div className="text-green-400 font-medium">AI Monitoring</div>
                 <Droplets className="w-8 h-8 text-green-400/60 mx-auto group-hover:bounce transition-transform duration-700 animate-shake" />
               </div>
               
@@ -178,7 +189,7 @@ export const HeroSection = () => {
                 <div className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-orange-400 to-red-500 bg-clip-text text-transparent animate-glow">
                   24/7
                 </div>
-                <div className="text-gray-200 font-semibold text-lg">Emergency Response</div>
+                <div className="text-gray-200 font-semibold text-lg">Smart Response</div>
                 <div className="text-orange-400 font-medium">Global Coverage</div>
                 <Zap className="w-8 h-8 text-orange-400/60 mx-auto group-hover:animate-pulse transition-transform duration-700 animate-swing" />
               </div>

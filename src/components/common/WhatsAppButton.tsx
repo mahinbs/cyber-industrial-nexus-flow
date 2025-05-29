@@ -6,6 +6,7 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
+import { Logo } from '@/components/ui/logo';
 
 export const WhatsAppButton = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -14,16 +15,16 @@ export const WhatsAppButton = () => {
   const [name, setName] = useState('');
 
   const services = [
-    'Composite Repair',
+    'Smart Maintenance Solutions',
+    'Predictive Analytics',
     'Industrial Cleaning',
     'Tank Cleaning',
     'Emergency Service',
-    'Marine Services',
     'General Inquiry'
   ];
 
   const handleSendMessage = () => {
-    const whatsappMessage = `Hi! I'm interested in your services.
+    const whatsappMessage = `Hi! I'm interested in REFSOL1 services.
     
 Name: ${name}
 Service: ${service}
@@ -63,12 +64,10 @@ Message: ${message}`;
               {/* Header */}
               <div className="bg-green-500 p-4 rounded-t-lg">
                 <div className="flex items-center">
-                  <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center mr-3">
-                    <MessageCircle className="w-6 h-6 text-green-500" />
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-white">Industrial Solutions</h4>
-                    <p className="text-green-100 text-sm">We reply immediately</p>
+                  <Logo size="sm" showText={false} />
+                  <div className="ml-3">
+                    <h4 className="font-semibold text-white">REFSOL1</h4>
+                    <p className="text-green-100 text-sm">Smart maintenance support</p>
                   </div>
                 </div>
               </div>
@@ -77,7 +76,7 @@ Message: ${message}`;
               <div className="p-4 space-y-4">
                 <div>
                   <p className="text-white mb-4">
-                    Hi there! 👋 How can we help you today?
+                    Hi there! 👋 How can REFSOL1 help you today?
                   </p>
                 </div>
 

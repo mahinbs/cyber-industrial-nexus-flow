@@ -3,6 +3,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { MessageCircle, Mail, Phone, MapPin } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { Logo } from '@/components/ui/logo';
 
 export const Footer = () => {
   const quickLinks = [
@@ -25,16 +26,9 @@ export const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Company Info */}
           <div className="space-y-4">
-            <div className="flex items-center space-x-2">
-              <div className="w-8 h-8 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-lg flex items-center justify-center">
-                <span className="text-black font-bold">IS</span>
-              </div>
-              <span className="text-xl font-bold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
-                Industrial Solutions
-              </span>
-            </div>
+            <Logo variant="float" />
             <p className="text-gray-400 leading-relaxed">
-              Leading provider of advanced industrial solutions, composite repairs, and maintenance products for the future.
+              Leading provider of advanced smart maintenance solutions, composite repairs, and industrial products for the future.
             </p>
             <div className="flex space-x-4">
               <Button
@@ -88,15 +82,15 @@ export const Footer = () => {
             <div className="space-y-3">
               <div className="flex items-center space-x-3 text-gray-400">
                 <Phone className="w-4 h-4 text-cyan-400" />
-                <span>+1 (555) 123-4567</span>
+                <span>+971 (4) 123-4567</span>
               </div>
               <div className="flex items-center space-x-3 text-gray-400">
                 <Mail className="w-4 h-4 text-cyan-400" />
-                <span>info@industrialsolutions.com</span>
+                <span>info@refsol1.com</span>
               </div>
               <div className="flex items-center space-x-3 text-gray-400">
                 <MapPin className="w-4 h-4 text-cyan-400" />
-                <span>123 Industrial Ave, Tech City</span>
+                <span>Dubai, United Arab Emirates</span>
               </div>
             </div>
           </div>
@@ -104,7 +98,7 @@ export const Footer = () => {
 
         <div className="border-t border-gray-800 mt-12 pt-8 text-center">
           <p className="text-gray-400">
-            © 2024 Industrial Solutions. All rights reserved. Designed for the future.
+            © 2024 REFSOL1. All rights reserved. Smart maintenance for the future.
           </p>
         </div>
       </div>
