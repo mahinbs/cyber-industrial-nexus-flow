@@ -29,12 +29,15 @@ export const Logo: React.FC<LogoProps> = ({
 
   return (
     <div className={cn('flex items-center space-x-3', className)}>
-      <div className={cn(sizes[size], 'relative overflow-hidden')}>
-        <img
-          src="/lovable-uploads/9eff5b8b-16e4-48bb-b29f-73b70e6b5b69.png"
-          alt="REFSOL1 Logo"
-          className="w-full h-full object-contain"
-        />
+      <div className={cn(sizes[size], 'relative flex items-center justify-center bg-gradient-to-r from-cyan-500 to-blue-600 rounded-lg')}>
+        <span className={cn(
+          'font-black text-white text-center leading-none',
+          size === 'sm' ? 'text-xs' : 
+          size === 'md' ? 'text-sm' : 
+          size === 'lg' ? 'text-base' : 'text-xl'
+        )}>
+          R1
+        </span>
       </div>
       {showText && (
         <div className="flex flex-col">
