@@ -12,6 +12,7 @@ import { LoadingScreen } from "@/components/ui/loading-screen";
 import Index from "./pages/Index";
 import About from "./pages/About";
 import Products from "./pages/Products";
+import Services from "./pages/Services";
 import Contact from "./pages/Contact";
 import Careers from "./pages/Careers";
 import Blog from "./pages/Blog";
@@ -42,13 +43,14 @@ const App = () => {
         <Toaster />
         <Sonner />
         <BrowserRouter>
-          <div className="min-h-screen bg-black text-white">
+          <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50 text-slate-900">
             <Header />
             <main className="pt-20">
               <Routes>
                 <Route path="/" element={<Index />} />
                 <Route path="/about" element={<About />} />
                 <Route path="/products" element={<Products />} />
+                <Route path="/services" element={<Services />} />
                 <Route path="/catalog" element={<Catalog />} />
                 <Route path="/contact" element={<Contact />} />
                 <Route path="/careers" element={<Careers />} />
