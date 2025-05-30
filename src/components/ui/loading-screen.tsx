@@ -35,20 +35,20 @@ export const LoadingScreen: React.FC<LoadingScreenProps> = ({
   if (!isVisible) return null;
 
   return (
-    <div className="fixed inset-0 bg-black z-[100] flex items-center justify-center">
+    <div className="fixed inset-0 bg-gradient-to-br from-slate-100 to-blue-100 z-[100] flex items-center justify-center">
       <div className="text-center space-y-8">
         <div className="relative">
           <Logo size="xl" className="scale-150" />
         </div>
         
-        <div className="w-64 h-2 bg-gray-800 rounded-full overflow-hidden">
+        <div className="w-64 h-2 bg-slate-200 rounded-full overflow-hidden">
           <div 
             className="h-full bg-gradient-to-r from-cyan-400 to-blue-500 transition-all duration-300 ease-out"
             style={{ width: `${progress}%` }}
           />
         </div>
         
-        <p className="text-cyan-400 text-lg font-medium">
+        <p className="text-blue-600 text-lg font-medium">
           Initializing Smart Maintenance Systems...
         </p>
       </div>
