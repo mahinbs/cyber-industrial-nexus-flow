@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -242,7 +241,7 @@ const QuickSealingAssessment = () => {
                     </SelectTrigger>
                     <SelectContent>
                       <SelectItem value="no-downtime">No Downtime Allowed</SelectItem>
-                      <SelectItem value="minimal">Minimal (< 2 hours)</SelectItem>
+                      <SelectItem value="minimal">Minimal (&lt; 2 hours)</SelectItem>
                       <SelectItem value="limited">Limited (2-8 hours)</SelectItem>
                       <SelectItem value="planned">Planned Shutdown OK</SelectItem>
                     </SelectContent>
@@ -262,6 +261,7 @@ const QuickSealingAssessment = () => {
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-6">
+                
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
                     <Label htmlFor="equipmentType" className="text-slate-700">Equipment Type *</Label>
@@ -368,6 +368,7 @@ const QuickSealingAssessment = () => {
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-6">
+                
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
                     <Label htmlFor="responseTime" className="text-slate-700">Required Response Time *</Label>
@@ -450,6 +451,7 @@ const QuickSealingAssessment = () => {
                 <CardTitle className="text-slate-800">Detailed Problem Description</CardTitle>
               </CardHeader>
               <CardContent className="space-y-6">
+                
                 <div>
                   <Label htmlFor="problemDescription" className="text-slate-700">Problem Description *</Label>
                   <Textarea
