@@ -1,4 +1,3 @@
-
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -18,6 +17,8 @@ import Careers from "./pages/Careers";
 import Blog from "./pages/Blog";
 import Catalog from "./pages/Catalog";
 import NotFound from "./pages/NotFound";
+import SealXpertAssessment from "./pages/SealXpertAssessment";
+import QuickSealingAssessment from "./pages/QuickSealingAssessment";
 
 const queryClient = new QueryClient();
 
@@ -55,6 +56,8 @@ const App = () => {
                 <Route path="/contact" element={<Contact />} />
                 <Route path="/careers" element={<Careers />} />
                 <Route path="/blog" element={<Blog />} />
+                <Route path="/assessment/sealxpert-pro" element={<SealXpertAssessment />} />
+                <Route path="/assessment/quick-sealing" element={<QuickSealingAssessment />} />
                 <Route path="*" element={<NotFound />} />
               </Routes>
             </main>
