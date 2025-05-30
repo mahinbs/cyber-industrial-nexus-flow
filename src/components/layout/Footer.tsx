@@ -36,7 +36,7 @@ export const Footer = () => {
   ];
 
   return (
-    <footer className="bg-gradient-to-b from-slate-100 to-white border-t border-blue-200/50">
+    <footer className="bg-gradient-to-b from-blue-50 to-white border-t border-blue-200/50">
       <div className="container mx-auto px-4 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
           {/* Company Info */}
@@ -66,9 +66,9 @@ export const Footer = () => {
                     >
                       <social.icon className="w-4 h-4" />
                     </a>
-                  </Link>
-                </Button>
-              ))}
+                  </Button>
+                ))}
+              </div>
             </div>
 
             {/* Company Profile Download */}
