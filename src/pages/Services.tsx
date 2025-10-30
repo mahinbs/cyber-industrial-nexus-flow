@@ -245,35 +245,21 @@ const Services = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
-              {
-                icon: Award,
-                title: '30+ Years Experience',
-                description: 'Proven track record in industrial maintenance and repair solutions'
-              },
-              {
-                icon: Shield,
-                title: 'Safety First',
-                description: 'Rigorous safety protocols and certified technicians for every project'
-              },
-              {
-                icon: Clock,
-                title: '24/7 Emergency Response',
-                description: 'Round-the-clock availability for critical maintenance needs'
-              },
-              {
-                icon: Wrench,
-                title: 'Advanced Technology',
-                description: 'State-of-the-art equipment and innovative repair methodologies'
-              }
-            ].map((benefit, index) => (
+              { iconName: 'Award', title: '30+ Years Experience', description: 'Proven track record in industrial maintenance and repair solutions' },
+              { iconName: 'Shield', title: 'Safety First', description: 'Rigorous safety protocols and certified technicians for every project' },
+              { iconName: 'Clock', title: '24/7 Emergency Response', description: 'Round-the-clock availability for critical maintenance needs' },
+              { iconName: 'Wrench', title: 'Advanced Technology', description: 'State-of-the-art equipment and innovative repair methodologies' }
+            ].map((benefit, index) => {
+              const Icon = benefit.iconName === 'Award' ? Award : benefit.iconName === 'Shield' ? Shield : benefit.iconName === 'Clock' ? Clock : Wrench;
+              return (
               <AnimatedSection key={benefit.title} delay={index * 100}>
                 <div className="text-center p-6 glass rounded-2xl border-blue-200/50 hover:border-blue-400/60 transition-all duration-300 hover:shadow-lg">
-                  <benefit.icon className="w-12 h-12 text-blue-500 mx-auto mb-4" />
+                  <Icon className="w-12 h-12 text-blue-500 mx-auto mb-4" />
                   <h3 className="text-lg font-semibold text-slate-800 mb-3">{benefit.title}</h3>
                   <p className="text-slate-600 text-sm leading-relaxed">{benefit.description}</p>
                 </div>
               </AnimatedSection>
-            ))}
+            )})}
           </div>
         </div>
       </section>

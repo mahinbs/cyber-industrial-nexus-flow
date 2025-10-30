@@ -53,7 +53,7 @@ const Catalog = () => {
                 <div className="flex justify-center mb-6">
                   <div className="p-4 bg-gradient-to-r from-cyan-500/20 to-blue-500/20 rounded-2xl border border-cyan-500/30">
                     {(() => {
-                      const Icon = IconMap[category.iconName as keyof typeof IconMap];
+                      const Icon = IconMap[category.iconName as keyof typeof IconMap] || Wrench;
                       return <Icon className="w-12 h-12 text-cyan-400" />;
                     })()}
                   </div>
