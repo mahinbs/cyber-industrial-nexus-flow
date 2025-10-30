@@ -3,14 +3,7 @@ import { useParams, Link } from "react-router-dom";
 import { getCatalogBySlug } from "@/content/catalogs";
 import { AnimatedSection } from "@/components/ui/animated-section";
 import { Button } from "@/components/ui/button";
-import {
-  ArrowLeft,
-  Info,
-  BookOpenText,
-  Wrench,
-  CheckCircle2,
-  FileDown,
-} from "lucide-react";
+import { ArrowLeft, Info, BookOpen, Wrench, CheckCircle2, FileDown } from "lucide-react";
 
 const CatalogDetail = () => {
   const { slug } = useParams();
@@ -136,7 +129,7 @@ const CatalogDetail = () => {
 
             <AnimatedSection className="bg-white/70 rounded-2xl p-8 border border-blue-200/50 max-w-5xl shadow-sm">
               <h3 className="text-2xl font-semibold text-slate-900 mb-4 flex items-center">
-                <BookOpenText className="w-5 h-5 text-blue-600 mr-3" /> Contents
+                <BookOpen className="w-5 h-5 text-blue-600 mr-3" /> Contents
               </h3>
               <p className="whitespace-pre-line text-slate-700 leading-relaxed">
                 {catalog.contentsText}
