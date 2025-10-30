@@ -69,6 +69,8 @@ const Services = () => {
     }
   ];
 
+  const toSlug = (name: string) => name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
+
   const filteredServices = services.filter(service => {
     const matchesSearch = service.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
                          service.description.toLowerCase().includes(searchTerm.toLowerCase());
@@ -208,7 +210,7 @@ const Services = () => {
                           variant="outline"
                           className="flex-1 border-blue-300 text-blue-600 hover:bg-blue-50"
                         >
-                          <Link to={service.assessmentForm}>
+                          <Link to={`/assessment/${toSlug(service.name)}`}>
                             <ArrowRight className="w-4 h-4 mr-2" />
                             Get Assessment
                           </Link>

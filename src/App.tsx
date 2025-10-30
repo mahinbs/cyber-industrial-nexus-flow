@@ -22,6 +22,7 @@ import SealXpertAssessment from "./pages/SealXpertAssessment";
 import ProductDetail from "./pages/ProductDetail";
 import ServiceDetail from "./pages/ServiceDetail";
 import QuickSealingAssessment from "./pages/QuickSealingAssessment";
+import Assessment from "./pages/Assessment";
 import ScrollToTop from "./components/common/ScrollToTop";
 
 const queryClient = new QueryClient();
@@ -72,6 +73,7 @@ const App = () => {
                   path="/assessment/quick-sealing"
                   element={<QuickSealingAssessment />}
                 />
+                <Route path="/assessment/:slug" element={<Assessment />} />
                 <Route path="*" element={<NotFound />} />
               </Routes>
             </main>
