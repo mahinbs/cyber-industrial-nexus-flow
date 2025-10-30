@@ -15,14 +15,7 @@ import { Link } from "react-router-dom";
 import { services as servicesContent } from "@/content/services";
 
 export const ServicesSection = () => {
-  const IconMap = {
-    Waves,
-    Beaker,
-    Wrench,
-    Shield,
-    Droplets,
-    Ship,
-  } as const;
+  const Icons = [Waves, Beaker, Wrench, Shield, Droplets, Ship];
 
   return (
     <section className="py-32 bg-gradient-to-b from-black via-gray-900 to-black relative overflow-hidden">
@@ -75,7 +68,7 @@ export const ServicesSection = () => {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-12">
           {servicesContent.map((service, index) => {
-            const Icon = IconMap[service.iconName];
+            const Icon = Icons[index % Icons.length];
             return (
               <AnimatedSection key={service.slug} delay={index * 150}>
                 <Card className="group relative h-full bg-gradient-to-br from-gray-800/80 to-gray-900/80 border-gray-700/50 hover:border-cyan-500/60 transition-all duration-700 overflow-hidden backdrop-blur-lg transform hover:scale-105 hover:-translate-y-6 hover:rotate-1">
@@ -88,9 +81,7 @@ export const ServicesSection = () => {
                   />
 
                   {/* Dynamic Color Overlay */}
-                  <div
-                    className={`absolute inset-0 bg-gradient-to-br ${service.color} opacity-0 group-hover:opacity-30 transition-opacity duration-700`}
-                  />
+                  <div className={`absolute inset-0 bg-gradient-to-br from-cyan-500 to-blue-600 opacity-0 group-hover:opacity-30 transition-opacity duration-700`} />
 
                   {/* Steam/Bubble Effect */}
                   <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700">
@@ -116,10 +107,10 @@ export const ServicesSection = () => {
 
                     {/* Content */}
                     <h3 className="text-2xl md:text-3xl font-bold text-white mb-6 group-hover:text-cyan-300 transition-colors duration-300">
-                      {service.title}
+                      {service.name}
                     </h3>
                     <p className="text-gray-300 mb-10 flex-grow leading-relaxed text-lg">
-                      {service.shortDescription}
+                      {service.description}
                     </p>
 
                     {/* Features with animated bullets */}
@@ -139,10 +130,10 @@ export const ServicesSection = () => {
                     </ul>
 
                     {/* CTA Button with 3D Effect */}
-                    {/* <Link
+                    <Link
                       to={`/services/${service.slug}`}
                       className="mt-auto"
-                    > */}
+                    >
                       <Button
                         variant="ghost"
                         className="w-full text-cyan-400 hover:text-white hover:bg-gradient-to-r hover:from-cyan-500/30 hover:to-blue-500/30 border-2 border-cyan-500/30 hover:border-cyan-400/60 transition-all duration-700 group/btn rounded-2xl py-4 transform hover:scale-105 hover:-translate-y-1"
@@ -150,7 +141,7 @@ export const ServicesSection = () => {
                         <span className="font-bold text-lg">View Details</span>
                         <ArrowRight className="ml-3 w-6 h-6 transform group-hover/btn:translate-x-3 group-hover/btn:scale-125 transition-transform duration-500" />
                       </Button>
-                    {/* </Link> */}
+                    </Link>
                   </CardContent>
                 </Card>
               </AnimatedSection>
