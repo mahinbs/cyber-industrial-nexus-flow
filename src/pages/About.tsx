@@ -86,7 +86,7 @@ const About = () => {
           <div className="container mx-auto px-4">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
               <AnimatedSection animation="slide-right" delay={200}>
-                <Card className="h-full bg-gradient-to-br from-cyan-500/10 to-blue-500/10 border-cyan-500/30 backdrop-blur-lg">
+                <Card className="h-full bg-cyan-500/10 border-cyan-500/30 backdrop-blur-lg">
                   <CardHeader>
                     <CardTitle className="text-4xl font-bold text-cyan-400 flex items-center">
                       <Target className="w-10 h-10 mr-4 animate-pulse" />
@@ -104,7 +104,7 @@ const About = () => {
               </AnimatedSection>
 
               <AnimatedSection animation="slide-left" delay={400}>
-                <Card className="h-full bg-gradient-to-br from-purple-500/10 to-pink-500/10 border-purple-500/30 backdrop-blur-lg">
+                <Card className="h-full bg-pink-500/10 border-purple-500/30 backdrop-blur-lg">
                   <CardHeader>
                     <CardTitle className="text-4xl font-bold text-purple-400 flex items-center">
                       <Heart className="w-10 h-10 mr-4 animate-pulse" />

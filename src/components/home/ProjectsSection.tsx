@@ -116,7 +116,7 @@ export const ProjectsSection = () => {
                 <Card 
                   className={`cursor-pointer transition-all duration-700 transform hover:scale-105 ${
                     selectedProject === index 
-                      ? 'bg-gradient-to-r from-purple-500/30 to-pink-500/30 border-purple-500/80 scale-105 shadow-2xl shadow-purple-500/25' 
+                      ? 'bg-purple-800/50 border-purple-500/80 scale-105 shadow-2xl shadow-purple-500/25' 
                       : 'bg-gray-800/50 border-gray-700/50 hover:border-purple-500/30'
                   }`}
                   onClick={() => setSelectedProject(index)}

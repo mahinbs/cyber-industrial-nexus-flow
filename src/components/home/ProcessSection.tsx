@@ -103,8 +103,8 @@ export const ProcessSection = () => {
                 <Card 
                   className={`cursor-pointer transition-all duration-700 transform hover:scale-105 ${
                     activeStep === index 
-                      ? 'bg-gradient-to-r from-blue-500/30 to-purple-500/30 border-blue-500/80 scale-105 shadow-2xl shadow-blue-500/25' 
-                      : 'bg-gray-800/50 border-gray-700/50 hover:border-blue-500/30'
+                      ? 'bg-slate-800/50 scale-105 shadow-2xl shadow-blue-500/25' 
+                      : '!bg-gray-800/50 border-gray-700/50 hover:border-blue-500/30'
                   }`}
                   onClick={() => setActiveStep(index)}
                 >
