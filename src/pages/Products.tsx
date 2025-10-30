@@ -76,7 +76,7 @@ const Products = () => {
                 Our Products
               </span>
             </h1>
-            <p className="text-2xl text-slate-700 leading-relaxed">
+            <p className="text-2xl text-slate-100 leading-relaxed">
               Advanced industrial solutions engineered for the world's most
               demanding applications
             </p>

@@ -22,6 +22,7 @@ import SealXpertAssessment from "./pages/SealXpertAssessment";
 import ProductDetail from "./pages/ProductDetail";
 import ServiceDetail from "./pages/ServiceDetail";
 import QuickSealingAssessment from "./pages/QuickSealingAssessment";
+import ScrollToTop from "./components/common/ScrollToTop";
 
 const queryClient = new QueryClient();
 
@@ -47,6 +48,7 @@ const App = () => {
         <Toaster />
         <Sonner />
         <BrowserRouter>
+          <ScrollToTop />
           <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50 text-slate-900">
             <Header />
             <main className="pt-20">
@@ -62,8 +64,14 @@ const App = () => {
                 <Route path="/contact" element={<Contact />} />
                 <Route path="/careers" element={<Careers />} />
                 <Route path="/blog" element={<Blog />} />
-                <Route path="/assessment/sealxpert-pro" element={<SealXpertAssessment />} />
-                <Route path="/assessment/quick-sealing" element={<QuickSealingAssessment />} />
+                <Route
+                  path="/assessment/sealxpert-pro"
+                  element={<SealXpertAssessment />}
+                />
+                <Route
+                  path="/assessment/quick-sealing"
+                  element={<QuickSealingAssessment />}
+                />
                 <Route path="*" element={<NotFound />} />
               </Routes>
             </main>
