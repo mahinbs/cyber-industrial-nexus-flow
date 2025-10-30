@@ -3,76 +3,15 @@ import React from 'react';
 import { Button } from '@/components/ui/button';
 import { AnimatedSection } from '@/components/ui/animated-section';
 import { Download, Eye, FileText, Wrench, Droplets, Factory } from 'lucide-react';
+import { catalogCategories as categoriesContent, catalogs } from '@/content/catalogs';
+import { Link } from 'react-router-dom';
 
 const Catalog = () => {
-  const catalogCategories = [
-    {
-      id: 'composite-repair',
-      title: 'Composite Repair',
-      description: 'Advanced composite repair solutions for critical applications',
-      icon: Wrench,
-      catalogs: [
-        {
-          name: 'Composite Repair Systems Guide',
-          description: 'Complete guide to composite repair methodologies and applications',
-          pages: '48 pages',
-          size: '12.5 MB',
-          preview: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=400&h=300&fit=crop'
-        },
-        {
-          name: 'Marine Composite Repairs',
-          description: 'Specialized solutions for marine and offshore applications',
-          pages: '32 pages',
-          size: '8.2 MB',
-          preview: 'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&h=300&fit=crop'
-        }
-      ]
-    },
-    {
-      id: 'epoxy-putties',
-      title: 'Epoxy Putties & Coatings',
-      description: 'High-performance protective and repair coatings',
-      icon: Droplets,
-      catalogs: [
-        {
-          name: 'Protective Coatings Handbook',
-          description: 'Comprehensive guide to industrial protective coatings',
-          pages: '64 pages',
-          size: '15.8 MB',
-          preview: 'https://images.unsplash.com/photo-1581092334651-ddf26d9a09d0?w=400&h=300&fit=crop'
-        },
-        {
-          name: 'Epoxy Putty Applications',
-          description: 'Technical specifications and application guidelines',
-          pages: '28 pages',
-          size: '6.4 MB',
-          preview: 'https://images.unsplash.com/photo-1581093458791-9d42cc0a6b8f?w=400&h=300&fit=crop'
-        }
-      ]
-    },
-    {
-      id: 'maintenance-products',
-      title: 'Maintenance Products',
-      description: 'Smart maintenance solutions for industrial operations',
-      icon: Factory,
-      catalogs: [
-        {
-          name: 'Smart Maintenance Systems',
-          description: 'AI-powered predictive maintenance solutions catalog',
-          pages: '56 pages',
-          size: '18.2 MB',
-          preview: 'https://images.unsplash.com/photo-1581092795360-fd1ca04f0952?w=400&h=300&fit=crop'
-        },
-        {
-          name: 'Industrial Cleaning Solutions',
-          description: 'Hydroblasting and surface preparation equipment',
-          pages: '40 pages',
-          size: '11.6 MB',
-          preview: 'https://images.unsplash.com/photo-1581092921461-eab62e97a780?w=400&h=300&fit=crop'
-        }
-      ]
-    }
-  ];
+  const catalogCategories = categoriesContent.map((c) => ({
+    ...c,
+    icon: c.iconName === 'Wrench' ? Wrench : c.iconName === 'Droplets' ? Droplets : Factory,
+    catalogs: catalogs.filter((k) => k.categoryId === c.id),
+  }));
 
   return (
     <div className="min-h-screen bg-black text-white">
@@ -118,7 +57,7 @@ const Catalog = () => {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 {category.catalogs.map((catalog, catalogIndex) => (
                   <AnimatedSection
-                    key={catalog.name}
+                    key={catalog.slug}
                     animation="scale"
                     delay={300 + catalogIndex * 150}
                     className="group"
@@ -156,18 +95,17 @@ const Catalog = () => {
 
                         {/* Action Buttons */}
                         <div className="flex space-x-3">
-                          <Button
-                            className="flex-1 bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-white group/btn"
-                          >
-                            <Eye className="w-4 h-4 mr-2 group-hover/btn:scale-110 transition-transform" />
-                            Preview
+                          <Button className="flex-1 bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-white group/btn" asChild>
+                            <Link to={`/catalog/${catalog.slug}`}>
+                              <Eye className="w-4 h-4 mr-2 group-hover/btn:scale-110 transition-transform" />
+                              View Details
+                            </Link>
                           </Button>
-                          <Button
-                            variant="outline"
-                            className="flex-1 border-cyan-400 text-cyan-400 hover:bg-cyan-400 hover:text-black group/btn"
-                          >
-                            <Download className="w-4 h-4 mr-2 group-hover/btn:scale-110 transition-transform" />
-                            Download
+                          <Button variant="outline" className="flex-1 border-cyan-400 text-cyan-400 hover:bg-cyan-400 hover:text-black group/btn" asChild>
+                            <a href={catalog.pdfUrl || '#'} download>
+                              <Download className="w-4 h-4 mr-2 group-hover/btn:scale-110 transition-transform" />
+                              Download
+                            </a>
                           </Button>
                         </div>
                       </div>

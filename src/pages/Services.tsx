@@ -8,6 +8,7 @@ import { Input } from '@/components/ui/input';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Search, Download, ArrowRight, Wrench, Shield, Clock, Award } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { services as servicesContent } from '@/content/services';
 
 const Services = () => {
   const [searchTerm, setSearchTerm] = useState('');
@@ -210,6 +211,16 @@ const Services = () => {
                           <Link to={service.assessmentForm}>
                             <ArrowRight className="w-4 h-4 mr-2" />
                             Get Assessment
+                          </Link>
+                        </Button>
+                        <Button
+                          asChild
+                          variant="outline"
+                          className="flex-1 border-blue-300 text-blue-600 hover:bg-blue-50"
+                        >
+                          <Link to={`/services/${service.name.toLowerCase().replace(/[^a-z0-9]+/g,'-')}`}>
+                            <ArrowRight className="w-4 h-4 mr-2" />
+                            View Details
                           </Link>
                         </Button>
                       </div>

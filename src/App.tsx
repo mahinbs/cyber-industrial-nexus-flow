@@ -16,8 +16,11 @@ import Contact from "./pages/Contact";
 import Careers from "./pages/Careers";
 import Blog from "./pages/Blog";
 import Catalog from "./pages/Catalog";
+import CatalogDetail from "./pages/CatalogDetail";
 import NotFound from "./pages/NotFound";
 import SealXpertAssessment from "./pages/SealXpertAssessment";
+import ProductDetail from "./pages/ProductDetail";
+import ServiceDetail from "./pages/ServiceDetail";
 import QuickSealingAssessment from "./pages/QuickSealingAssessment";
 
 const queryClient = new QueryClient();
@@ -51,8 +54,11 @@ const App = () => {
                 <Route path="/" element={<Index />} />
                 <Route path="/about" element={<About />} />
                 <Route path="/products" element={<Products />} />
+                <Route path="/products/:slug" element={<ProductDetail />} />
                 <Route path="/services" element={<Services />} />
+                <Route path="/services/:slug" element={<ServiceDetail />} />
                 <Route path="/catalog" element={<Catalog />} />
+                <Route path="/catalog/:slug" element={<CatalogDetail />} />
                 <Route path="/contact" element={<Contact />} />
                 <Route path="/careers" element={<Careers />} />
                 <Route path="/blog" element={<Blog />} />
