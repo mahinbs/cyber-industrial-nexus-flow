@@ -139,11 +139,10 @@ export const ServicesSection = () => {
                     </ul>
 
                     {/* CTA Button with 3D Effect */}
-                    <Link
-                      // to={`/services/${service.slug}`}
-                      to="#"
+                    {/* <Link
+                      to={`/services/${service.slug}`}
                       className="mt-auto"
-                    >
+                    > */}
                       <Button
                         variant="ghost"
                         className="w-full text-cyan-400 hover:text-white hover:bg-gradient-to-r hover:from-cyan-500/30 hover:to-blue-500/30 border-2 border-cyan-500/30 hover:border-cyan-400/60 transition-all duration-700 group/btn rounded-2xl py-4 transform hover:scale-105 hover:-translate-y-1"
@@ -151,7 +150,7 @@ export const ServicesSection = () => {
                         <span className="font-bold text-lg">View Details</span>
                         <ArrowRight className="ml-3 w-6 h-6 transform group-hover/btn:translate-x-3 group-hover/btn:scale-125 transition-transform duration-500" />
                       </Button>
-                    </Link>
+                    {/* </Link> */}
                   </CardContent>
                 </Card>
               </AnimatedSection>
