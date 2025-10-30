@@ -7,9 +7,14 @@ import { catalogCategories as categoriesContent, catalogs } from '@/content/cata
 import { Link } from 'react-router-dom';
 
 const Catalog = () => {
+  const IconMap = {
+    Wrench,
+    Droplets,
+    Factory,
+  } as const;
+
   const catalogCategories = categoriesContent.map((c) => ({
     ...c,
-    icon: c.iconName === 'Wrench' ? Wrench : c.iconName === 'Droplets' ? Droplets : Factory,
     catalogs: catalogs.filter((k) => k.categoryId === c.id),
   }));
 
@@ -47,7 +52,10 @@ const Catalog = () => {
               <div className="mb-12 text-center">
                 <div className="flex justify-center mb-6">
                   <div className="p-4 bg-gradient-to-r from-cyan-500/20 to-blue-500/20 rounded-2xl border border-cyan-500/30">
-                    <category.icon className="w-12 h-12 text-cyan-400" />
+                    {(() => {
+                      const Icon = IconMap[category.iconName as keyof typeof IconMap];
+                      return <Icon className="w-12 h-12 text-cyan-400" />;
+                    })()}
                   </div>
                 </div>
                 <h2 className="text-4xl font-bold text-white mb-4">{category.title}</h2>
